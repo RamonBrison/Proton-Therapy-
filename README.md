@@ -1,0 +1,1 @@
+This project aims to characterize proton Bragg peaks in water using Monte Carlo simulations with OpenTOPAS. Current work includes analysis of PSTAR CSDA range data and preliminary validation studies before full Monte Carlo implementation.
