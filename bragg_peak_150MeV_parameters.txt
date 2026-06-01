@@ -1,0 +1,43 @@
+# Water Phantom
+
+# ---- Geometry ----
+s:Ge/Phantom/Type     = "TsBox"
+s:Ge/Phantom/Material = "G4_WATER"
+s:Ge/Phantom/Parent   = "World"
+d:Ge/Phantom/HLX      = 15. cm
+d:Ge/Phantom/HLY      = 15. cm
+d:Ge/Phantom/HLZ      = 15. cm
+d:Ge/Phantom/TransX   = 0. cm
+d:Ge/Phantom/TransY   = 0. cm
+d:Ge/Phantom/TransZ   = 0. cm
+
+# ---- Physics ----
+sv:Ph/Default/Modules = 2 "g4em-standard_opt4" "g4h-phy_QGSP_BIC_HP"
+
+# ---- Souce ----
+s:So/Beam/Type                       = "Beam"
+s:So/Beam/Component                  = "BeamPosition"
+s:So/Beam/BeamParticle               = "proton"
+d:So/Beam/BeamEnergy                 = 150. MeV
+u:So/Beam/BeamEnergySpread           = 0.
+s:So/Beam/BeamPositionDistribution   = "Gaussian"
+s:So/Beam/BeamPositionCutoffShape = "Rectangle"
+d:So/Beam/BeamPositionCutoffX        = 3. cm
+d:So/Beam/BeamPositionCutoffY        = 3. cm
+d:So/Beam/BeamPositionSpreadX        = 0.5 cm
+d:So/Beam/BeamPositionSpreadY        = 0.5 cm
+s:So/Beam/BeamAngularDistribution    = "None"
+d:So/Beam/BeamPositionZ = 15. cm
+uv:So/Beam/BeamDirectionCosines = 3 0. 0. -1.
+i:So/Beam/NumberOfHistoriesInRun     = 10000
+
+# ---- SCORER ----
+s:Sc/DoseDepth/Quantity    = "DoseToMedium"
+s:Sc/DoseDepth/Component   = "Fantoma"
+b:Sc/DoseDepth/OutputToConsole = "False"
+s:Sc/DoseDepth/OutputType  = "csv"
+s:Sc/DoseDepth/OutputFile  = "BraggPeak_150MeV"
+i:Sc/DoseDepth/XBins       = 1
+i:Sc/DoseDepth/YBins       = 1
+i:Sc/DoseDepth/ZBins       = 300
+s:Sc/DoseDepth/IfOutputFileAlreadyExists = "Overwrite"
